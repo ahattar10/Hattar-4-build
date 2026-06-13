@@ -1,0 +1,162 @@
+:* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background-color: #f4f1ea;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  gap: 1rem;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+}
+
+.site-header {
+  grid-area: header;
+  background-color: #d97742;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.site-header h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.intro-text {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.site-nav {
+  grid-area: nav;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #8a3f1c;
+  font-weight: bold;
+  background-color: #f7e4d7;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+}
+
+.site-main {
+  grid-area: main;
+  display: grid;
+  gap: 1rem;
+}
+
+.content-section {
+  background-color: white;
+  padding: 1.25rem;
+  border-radius: 12px;
+}
+
+.content-section h2 {
+  margin-top: 0;
+}
+
+.content-section p,
+.content-section li {
+  line-height: 1.6;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.trail-card {
+  background-color: #f9f4ee;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.site-footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.site-footer a {
+  color: #ffd7bf;
+}
+
+@media (min-width: 700px) {
+  .site-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #overview,
+  #trails {
+    grid-column: 1 / -1;
+  }
+
+  .card-row {
+    flex-direction: row;
+  }
+
+  .trail-card {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header {
+    padding: 2rem;
+  }
+
+  .site-main {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  #overview {
+    grid-column: span 7;
+  }
+
+  #packing {
+    grid-column: span 5;
+  }
+
+  #trails,
+  #etiquette {
+    grid-column: 1 / -1;
+  }
+}
